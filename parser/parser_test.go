@@ -10,12 +10,16 @@ func TestLetStatements(t *testing.T) { input := `
    `
        l := lexer.New(input)
        p := New(l)
-program := p.ParseProgram() if program == nil {
+       program := p.ParseProgram() 
+
+       if program == nil {
            t.Fatalf("ParseProgram() returned nil")
        }
-if len(program.Statements) != 3 {
-t.Fatalf("program.Statements does not contain 3 statements. got=%d",
-}
+
+       if len(program.Statements) != 3 {
+
+           t.Fatalf("program.Statements does not contain 3 statements. got=%d",
+       }
 len(program.Statements))
 tests := []struct { expectedIdentifier string
 }{
